@@ -1,0 +1,3 @@
+@instruments.map do |instrument|
+  render partial: "instrument.json.jb", locals: { instrument: instrument }
+end

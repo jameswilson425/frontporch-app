@@ -1,0 +1,4 @@
+{
+  id: instrument.id,
+  name: instrument.name,
+}

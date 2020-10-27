@@ -1,0 +1,6 @@
+{
+  id: reply.id,
+  user_id: reply.user_id,
+  post_id: reply.post_id,
+  body: reply.body,
+}

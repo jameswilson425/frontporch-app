@@ -1,0 +1,11 @@
+{
+  id: post.id,
+  user_id: post.user_id,
+  title: post.title,
+  body: post.body,
+  address: post.address,
+  image_url: post.image_url,
+  instruments: post.instruments.map do |instrument|
+    render partial: "api/instruments/instrument.json.jb", locals: { instrument: instrument }
+  end,
+}
