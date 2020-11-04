@@ -1,5 +1,9 @@
 post = render partial: "post.json.jb", locals: { post: @post }
 
+post[:instruments] = @post.instruments.map do |instrument|
+  render partial: "api/instruments/instrument.json.jb", locals: { instrument: instrument }
+end
+
 post[:replies] = @post.replies.map do |reply|
   render partial: "api/replies/reply.json.jb", locals: { reply: reply }
 end

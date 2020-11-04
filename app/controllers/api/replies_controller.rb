@@ -1,4 +1,6 @@
 class Api::RepliesController < ApplicationController
+  before_action :authenticate_user
+
   def create
     @reply = Reply.new(
       user_id: params[:user_id],

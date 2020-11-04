@@ -1,5 +1,14 @@
-@posts = @posts.map do |post|
-  render partial: "post.json.jb", locals: { post: post }
+@posts.map do |post|
+  all_posts = render partial: "post.json.jb", locals: { post: post }
+
+  all_posts[:instruments] = post.instruments.map do |instrument|
+    render partial: "/api/instruments/instrument", locals: { instrument: instrument }
+  end
+  all_posts
 end
 
-@posts
+# posts = @posts.map do |post|
+#   render partial: "post.json.jb", locals: { post: post }
+# end
+
+# posts
