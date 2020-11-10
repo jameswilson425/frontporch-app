@@ -24,7 +24,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id]) #current user?
+    @user = User.find(params[:id]) # validate current user?
 
     @user.user_name = params[:user_name] || @user.user_name
     @user.email = params[:email] || @user.email
