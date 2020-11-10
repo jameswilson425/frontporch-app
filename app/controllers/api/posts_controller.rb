@@ -15,7 +15,7 @@ class Api::PostsController < ApplicationController
       image_url: params[:image_url],
     )
     if @post.save
-      eval(params[:instrument_ids]).each do |instrument_id|
+      params[:instrument_ids].each do |instrument_id|
         InstrumentPost.create(
           post_id: @post.id,
           instrument_id: instrument_id,
@@ -43,7 +43,7 @@ class Api::PostsController < ApplicationController
     if @post.save
       if params[:instrument_ids]
         @post.instrument_posts.destroy_all
-        eval(params[:instrument_ids]).each do |instrument_id|
+        params[:instrument_ids].each do |instrument_id|
           InstrumentPost.create(
             post_id: @post.id,
             instrument_id: instrument_id,
