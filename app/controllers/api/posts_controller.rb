@@ -23,7 +23,7 @@ class Api::PostsController < ApplicationController
       end
       render "show.json.jb"
     else
-      render json: { errors: post.errors.full_messages }, status: :bad_request
+      render json: { errors: @post.errors.full_messages }, status: :bad_request
     end
   end
 

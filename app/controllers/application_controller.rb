@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
+  # before_action :set_https_header
+
+  # def set_https_header
+  #   response.set_header("X-Frame-Options", "SAMEORIGIN")
+  # end
 
   def current_user
     auth_headers = request.headers["Authorization"]
