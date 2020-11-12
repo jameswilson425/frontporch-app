@@ -8,7 +8,7 @@ class Api::PostsController < ApplicationController
 
   def create
     @post = Post.new(
-      user_id: params[:user_id],
+      user_id: current_user.id,
       title: params[:title],
       body: params[:body],
       address: params[:address],
