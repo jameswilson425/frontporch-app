@@ -6,4 +6,5 @@
   address: post.address,
   image_url: post.image_url,
   user_name: post.user.user_name,
+  profile_image: post.user.profile_image,
 }
