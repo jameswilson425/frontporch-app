@@ -3,4 +3,5 @@
   user_id: reply.user_id,
   post_id: reply.post_id,
   body: reply.body,
+  user_name: reply.user.user_name,
 }
