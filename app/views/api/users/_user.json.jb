@@ -5,4 +5,6 @@
   address: @user.address,
   bio: @user.bio,
   profile_image: @user.profile_image,
+  posts: @user.posts.map { |post| post[:title] },
+  replies: @user.replies.map { |reply| reply[:post_id] },
 }
