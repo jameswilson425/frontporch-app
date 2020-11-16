@@ -4,4 +4,5 @@
   post_id: reply.post_id,
   body: reply.body,
   user_name: reply.user.user_name,
+  created_at: reply.created_at,
 }
