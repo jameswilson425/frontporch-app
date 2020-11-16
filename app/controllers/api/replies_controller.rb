@@ -2,15 +2,15 @@ class Api::RepliesController < ApplicationController
   before_action :authenticate_user
 
   def create
-    reply = Reply.new(
+    @reply = Reply.new(
       user_id: current_user.id,
-      post_id: params[:post_id],
+      post_id: params[:post_id], #current_post?
       body: params[:body],
     )
-    if reply.save
+    if @reply.save
       render "show.json.jb"
     else
-      render json: { errors: reply.errors.full_messages }, status: :bad_request
+      render json: { errors: @reply.errors.full_messages }, status: :bad_request
     end
   end
 

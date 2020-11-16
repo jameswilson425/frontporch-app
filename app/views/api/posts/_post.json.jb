@@ -6,5 +6,4 @@
   address: post.address,
   image_url: post.image_url,
   user_name: post.user.user_name,
-  instruments: post.instruments.map { |instrument| instrument[:name] },
 }
