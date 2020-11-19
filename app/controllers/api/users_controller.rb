@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action :authenticate_user, except: :create
+  before_action :authenticate_user, except: [:show, :create]
 
   def create
     user = User.new(
@@ -24,7 +24,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id]) # validate current user?
+    @user = User.find(params[:id])
 
     @user.user_name = params[:user_name] || @user.user_name
     @user.email = params[:email] || @user.email
